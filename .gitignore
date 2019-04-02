@@ -2,6 +2,9 @@
 
 # dependencies
 /node_modules
+/.sass-cache
+/assets/.sass-cache
+/.idea
 /.pnp
 .pnp.js
 

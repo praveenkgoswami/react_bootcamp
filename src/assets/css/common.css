@@ -1,0 +1,10 @@
+/*Navbar CSS*/
+.collapse.navbar-collapse{justify-content: flex-end;}
+/*Carousel CSS*/
+.carousel-item img{width: 100%}
+
+/*Inner wrapper*/
+.inner-wrapper{padding: 50px 0}
+
+/*Card Css*/
+.card{margin-bottom: 1rem;}
