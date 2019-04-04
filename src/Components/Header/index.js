@@ -14,7 +14,7 @@ import {
 
 export default class Header extends Component {
   state = {
-    isOpen: false
+    isOpen: false,
   };
 
   toggle = () => {
@@ -25,11 +25,13 @@ export default class Header extends Component {
   };
   render() {
     const { isOpen } = this.state;
+    const { countValue } = this.props;
     return (
       <header className="bg-dark">
         <div className="container">
           <Navbar dark expand="md">
             <NavbarBrand href="/">BrandLogo</NavbarBrand>
+            <span>{countValue}</span>
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={isOpen} navbar>
               <Nav className="ml-auto" navbar>

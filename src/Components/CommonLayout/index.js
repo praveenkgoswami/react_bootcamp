@@ -4,17 +4,30 @@ import Header from "../Header";
 import Footer from "../Footer";
 
 class CommonLayout extends PureComponent {
+  state = {
+    countValue : 0,
+  };
+
+  updateCount = () => {
+    const { countValue } = this.state;
+    this.setState({
+      countValue : countValue + 1,
+    })
+  };
+
   render() {
     const { component: Component, ...rest } = this.props;
+    const { countValue } = this.state;
     return (
       <Route
         {...rest}
         render={matchProps => (
       <React.Fragment>
-        <Header/>
+        <Header countValue = {countValue} />
         <main>
           <Component
             {...matchProps}
+            updateCount={()=>this.updateCount()}
           />
         </main>
         <Footer/>
