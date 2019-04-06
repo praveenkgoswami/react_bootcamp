@@ -16,14 +16,14 @@ class CommonLayout extends PureComponent {
   };
 
   render() {
-    const { component: Component, ...rest } = this.props;
+    const { component: Component, path, ...rest } = this.props;
     const { countValue } = this.state;
     return (
       <Route
         {...rest}
         render={matchProps => (
       <React.Fragment>
-        <Header countValue = {countValue} />
+        <Header countValue = {countValue} path={path}/>
         <main>
           <Component
             {...matchProps}

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Button from "reactstrap/es/Button";
+import { Button, Badge } from "reactstrap";
 
 export default class Counter extends Component{
   state = {
@@ -9,6 +9,17 @@ export default class Counter extends Component{
   counterMethod = (count) => () => {
     this.setState({ count })
   };
+
+  componentWillReceiveProps(nextProps) {
+    const { addCountAll } = nextProps;
+    const { count } = this.state;
+    if (addCountAll) {
+      this.setState({ count: count + 1 })
+    }
+    if (!addCountAll && count > 0) {
+      this.setState({ count: count - 1 })
+    }
+  }
 
   render() {
     const { count } = this.state;
@@ -21,10 +32,10 @@ export default class Counter extends Component{
         >
           +Count
         </Button>
-        <span>{count}</span>
+        <Badge color="secondary">{count}</Badge>
         <Button
           outline
-          color="warning"
+          color="danger"
           onClick={this.counterMethod(count  > 0 ? count - 1 : 0 )}
         >
           -Count

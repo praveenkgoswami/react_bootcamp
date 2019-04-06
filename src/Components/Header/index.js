@@ -25,13 +25,13 @@ export default class Header extends Component {
   };
   render() {
     const { isOpen } = this.state;
-    const { countValue } = this.props;
+    const { countValue, path } = this.props;
     return (
       <header className="bg-dark">
         <div className="container">
           <Navbar dark expand="md">
             <NavbarBrand href="/">BrandLogo</NavbarBrand>
-            <span>{countValue}</span>
+            {path === '/about-us' ? <span className="headerCount">{countValue}</span> : null}
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={isOpen} navbar>
               <Nav className="ml-auto" navbar>
@@ -40,6 +40,12 @@ export default class Header extends Component {
                 </NavItem>
                 <NavItem>
                   <NavLink href="/about-us">About Us</NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink href="/menu">Menu</NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink href="/cart">Cart</NavLink>
                 </NavItem>
                 <UncontrolledDropdown nav inNavbar>
                   <DropdownToggle nav caret>
