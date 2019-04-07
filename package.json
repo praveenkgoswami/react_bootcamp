@@ -1,8 +1,8 @@
 {
-  "name": "ch_react",
+  "name": "react_bootcamp",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://praveenkgoswami.github.io/ch_react",
+  "homepage": "http://praveenkgoswami.github.io/react_bootcamp",
   "dependencies": {
     "bootstrap": "^4.3.1",
     "react": "^16.8.5",
