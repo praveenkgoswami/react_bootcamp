@@ -47,6 +47,9 @@ export default class Header extends Component {
                 <NavItem>
                   <NavLink href="/cart">Cart</NavLink>
                 </NavItem>
+                <NavItem>
+                  <NavLink href="/login">Login</NavLink>
+                </NavItem>
                 <UncontrolledDropdown nav inNavbar>
                   <DropdownToggle nav caret>
                     Options

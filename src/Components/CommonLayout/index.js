@@ -26,6 +26,7 @@ class CommonLayout extends PureComponent {
         <Header countValue = {countValue} path={path}/>
         <main>
           <Component
+            {...rest}
             {...matchProps}
             updateCount={()=>this.updateCount()}
           />

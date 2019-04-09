@@ -5,7 +5,7 @@ import Button from "reactstrap/es/Button";
 
 class AboutUs extends Component{
   state = {
-    addCountAll : true,
+    addCountAll : false,
   };
   allUpdateCount = (countType) => {
     if (countType === 'add') {
@@ -25,25 +25,24 @@ class AboutUs extends Component{
       <div className="container text-center">
         <h2>Know More About Us</h2>
         <div>
-          <h4>Click to add count 1</h4>
+          <Button
+            outline
+            color="secondary"
+            onClick={()=>updateCount()}
+          >
+            +Header Count
+          </Button>
+          <h4 className="mt-3">Click to add count 1</h4>
+          <Counter addCountAll={addCountAll} />
+          <h4 className="mt-3">Click to add count 2</h4>
+          <Counter addCountAll={addCountAll} />
+          <h4 className="mt-3">Click to add count 3</h4>
           <Counter addCountAll={addCountAll} />
           <div className="mt-3">
             <Button
               outline
               color="secondary"
-              onClick={()=>updateCount()}
-            >
-              +Count
-            </Button>
-          </div>
-          <h4>Click to add count 2</h4>
-          <Counter addCountAll={addCountAll} />
-          <h4>Click to add count 3</h4>
-          <Counter addCountAll={addCountAll} />
-          <div className="mt-3">
-            <Button
-              outline
-              color="secondary"
+              className="mr-2"
               onClick={()=>this.allUpdateCount('add')}
             >
               +All Increment
