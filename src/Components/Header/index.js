@@ -10,9 +10,15 @@ import {
   UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
-  DropdownItem } from 'reactstrap';
+  DropdownItem,
+} from 'reactstrap';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-export default class Header extends Component {
+const mapStateToProps = state => ({
+  count: state.commonReducer.count,
+});
+class Header extends Component {
   state = {
     isOpen: false,
   };
@@ -25,13 +31,14 @@ export default class Header extends Component {
   };
   render() {
     const { isOpen } = this.state;
-    const { countValue, path } = this.props;
+    const { path, count } = this.props;
+    console.log('header Props', this.props);
     return (
       <header className="bg-dark">
         <div className="container">
           <Navbar dark expand="md">
             <NavbarBrand href="/">BrandLogo</NavbarBrand>
-            {path === '/about-us' ? <span className="headerCount">{countValue}</span> : null}
+            {path === '/about-us' ? <span className="headerCount">{count}</span> : null}
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={isOpen} navbar>
               <Nav className="ml-auto" navbar>
@@ -52,19 +59,14 @@ export default class Header extends Component {
                 </NavItem>
                 <UncontrolledDropdown nav inNavbar>
                   <DropdownToggle nav caret>
-                    Options
+                    Account
                   </DropdownToggle>
                   <DropdownMenu right>
-                    <DropdownItem>
-                      Option 1
-                    </DropdownItem>
-                    <DropdownItem>
-                      Option 2
-                    </DropdownItem>
+                    <Link to="/login" className="dropdown-item">Login</Link>
+                    <Link to="/book-list" className="dropdown-item">Book list</Link>
+                    <Link to="/book-detail" className="dropdown-item">Book Detail</Link>
                     <DropdownItem divider />
-                    <DropdownItem>
-                      Reset
-                    </DropdownItem>
+                    <Link to="/" className="dropdown-item">Logout</Link>
                   </DropdownMenu>
                 </UncontrolledDropdown>
               </Nav>
@@ -75,3 +77,5 @@ export default class Header extends Component {
     );
   }
 }
+
+export default connect(mapStateToProps, null)(Header);

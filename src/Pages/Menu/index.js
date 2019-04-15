@@ -8,23 +8,23 @@ class MenuContainer extends Component{
     dishList : [
       {
         name: 'dish1',
-        id: '1',
-        price: '45',
+        id: 1,
+        price: 45,
       },
       {
         name: 'dish2',
-        id: '2',
-        price: '40',
+        id: 2,
+        price: 40,
       },
       {
         name: 'dish3',
-        id: '3',
-        price: '50',
+        id: 3,
+        price: 50,
       },
       {
         name: 'dish4',
-        id: '4',
-        price: '65',
+        id: 4,
+        price: 65,
       },
     ]
   };

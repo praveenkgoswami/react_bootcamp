@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import store from './store/store';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import './assets/css/common.css';
@@ -11,7 +13,9 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
-        <AppRoutes />
+        <Provider store={store}>
+          <AppRoutes />
+        </Provider>
       </React.Fragment>
     );
   }

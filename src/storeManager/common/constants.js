@@ -1,0 +1,4 @@
+export const ACTION = {
+  UPDATE_COUNT : 'UPDATE_COUNT',
+  UPDATE_DETAIL : 'UPDATE_DETAIL',
+};
