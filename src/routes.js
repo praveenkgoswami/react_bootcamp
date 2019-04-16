@@ -6,6 +6,7 @@ import HomePage from "./Pages/Home";
 import AboutUs from "./Pages/AboutUs";
 import MenuContainer from "./Pages/Menu";
 import Cart from "./Pages/Cart";
+import SassPage from "./Pages/Sass";
 import Login from "./Pages/Login";
 import BookList from "./Pages/BookList";
 import BookDetail from "./Pages/BookList/BookDetail";
@@ -53,6 +54,7 @@ export default class AppRoutes extends Component {
           <CommonLayout exact path="/about-us" component={AboutUs} />
           <CommonLayout exact path="/menu" component={MenuContainer} />
           <CommonLayout exact path="/cart" component={Cart} />
+          <CommonLayout exact path="/sass" component={SassPage} />
           <CommonLayout exact path="/login" component={Login} handleAuth={this.handleAuth}/>
           <PrivateRoute />
         </Switch>

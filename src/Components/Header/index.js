@@ -12,7 +12,7 @@ import {
   DropdownMenu,
   DropdownItem,
 } from 'reactstrap';
-import { Link } from 'react-router-dom';
+import { Link, NavLink as RRNavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 const mapStateToProps = state => ({
@@ -43,19 +43,22 @@ class Header extends Component {
             <Collapse isOpen={isOpen} navbar>
               <Nav className="ml-auto" navbar>
                 <NavItem>
-                  <NavLink href="/">Home</NavLink>
+                  <NavLink exact to="/" activeClassName='active' tag={RRNavLink}>Home</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="/about-us">About Us</NavLink>
+                  <NavLink to="/about-us" activeClassName='active' tag={RRNavLink}>About Us</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="/menu">Menu</NavLink>
+                  <NavLink to="/menu" activeClassName='active' tag={RRNavLink}>Menu</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="/cart">Cart</NavLink>
+                  <NavLink to="/cart" activeClassName='active' tag={RRNavLink}>Cart</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="/login">Login</NavLink>
+                  <NavLink to="/sass" activeClassName='active' tag={RRNavLink}>Sass</NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink to="/login" activeClassName='active' tag={RRNavLink}>Login</NavLink>
                 </NavItem>
                 <UncontrolledDropdown nav inNavbar>
                   <DropdownToggle nav caret>
