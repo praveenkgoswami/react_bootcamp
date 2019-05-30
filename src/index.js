@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import store from './store/store';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.scss';
-import './assets/css/common.css';
+import './assets/sass/common.scss';
 // import * as serviceWorker from './serviceWorker';
 // import logo from "./logo.svg";
 import AppRoutes from './routes';

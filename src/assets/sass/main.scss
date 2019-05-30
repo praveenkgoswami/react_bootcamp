@@ -1,4 +1,5 @@
 @import "variable";
+main{min-height: calc(100vh - 112px);}
 .custom-card{
   border: 1px solid $border-color;
 }
